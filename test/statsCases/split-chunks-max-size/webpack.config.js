@@ -44,5 +44,23 @@ module.exports = [
 			}
 		},
 		stats
-	}
+	},
+	{
+		name: "production",
+		mode: "production",
+		entry: {
+			main: "./"
+		},
+		output: {
+			filename: "switched-[name].js"
+		},
+		optimization: {
+			splitChunks: {
+				minSize: 1000,
+				maxSize: 100,
+				chunks: "all"
+			}
+		},
+		stats
+	},
 ];
